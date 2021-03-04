@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" >#</th>
+            <th scope="col" >Bandera</th>
+            <th scope="col" >Nombre</th>
+            <th scope="col" >Población</th>
+            <th scope="col" ></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let region of regiones, let i = index">
+            <td >{{i+1}}</td>
+            <td ><img [src]="region.flag" alt="no disponible" style="width: 100px; height: 70px;"/></td>
+            <td >{{region.name}}</td>
+            <td >{{region.population}}</td>
+            <td >
+                <button type="button" class="btn btn-success" [routerLink] = "['/pais', region.alpha2Code]">Ver mas...</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
